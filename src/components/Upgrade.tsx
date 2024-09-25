@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Upgrade = () => {
   const [open, setOpen] = useState(false);
