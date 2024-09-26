@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Upgrade = () => {
   const [open, setOpen] = useState(false);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimate(true);
+    }, 100);
+  }, []);
   return (
     <div
-      className="flex rounded-md shadow-md gap-2 px-4 py-2 items-center"
+      className={`flex rounded-md shadow-md gap-2 px-4 py-2 items-center transition-transform transform duration-1000 ease-in-out flex-wrap justify-center ${
+        animate ? "translate-x-0" : "translate-x-28"
+      }`}
       onClick={() => setOpen((prev) => !prev)}
     >
       <div className="text-green-500">$</div>
